@@ -1,0 +1,108 @@
+﻿@model IEnumerable<MeetingTracker.Models.Meeting>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+
+    $(function () {
+
+        $("#txtdatepicker").datepicker();
+
+    });
+
+</script>
+
+<h2>jQuery Datepicker</h2>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+
+    <p>
+
+        @Html.TextBox("Datepicker", "", new { @id = "txtdatepicker", @style = "width:150px;" })
+
+        <br />
+
+        Your selected date :@ViewBag.dateValue
+
+        <br /><input type="submit" value="Submit" />
+
+    </p>
+
+}
+
+
+
+
+
+
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingType.MeetingTypeDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingType.MeetingTypeDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MeetingId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MeetingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MeetingId })
+        </td>
+    </tr>
+}
+
+</table>
