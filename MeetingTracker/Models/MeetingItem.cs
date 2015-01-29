@@ -32,7 +32,7 @@ namespace MeetingTracker.Models
         public DateTime? CompletedDate { get; set; }  //this can be nullable
 
 
-        [Required(ErrorMessage = "Please select person from Dropdown.")]
+    
         [Display(Name = "Assignee")]
         public virtual Person Person { get; set; }
 

@@ -17,6 +17,7 @@
 
         $("#txtdatepicker").datepicker();
         $("#txtdatepicker1").datepicker();
+        $("#txtdatepicker2").datepicker();
 
     });
 
@@ -44,7 +45,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MeetingItemDescription, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MeetingItemDescription)
+                @Html.TextAreaFor(model => model.MeetingItemDescription)
                 @Html.ValidationMessageFor(model => model.MeetingItemDescription)
             </div>
         </div>
@@ -73,7 +74,7 @@
                     new SelectListItem{Text = "Please Select Priority", Value="Select", Selected = true},
                     new SelectListItem { Text = "Low", Value = "Low" },
                     new SelectListItem { Text = "Normal", Value = "Normal" },
-                    new SelectListItem { Text = "High", Value = "High" }
+                    new SelectListItem { Text = "Urgent", Value = "Urgent" }
                     })
                 @Html.ValidationMessageFor(model => model.Priority)
 
@@ -86,9 +87,9 @@
                 @Html.DropDownList("Status", new List<SelectListItem>
                     {
                     new SelectListItem{Text = "Please Select Status", Value="Select", Selected = true},
-                    new SelectListItem { Text = "In Progress", Value = "Progress" },
+                    new SelectListItem { Text = "In Progress", Value = "In Progress" },
                     new SelectListItem { Text = "Resolved", Value = "Resolved" },
-                    new SelectListItem { Text = "Closed", Value = "High" }
+                    new SelectListItem { Text = "Closed", Value = "Closed" }
                     })
                 @Html.ValidationMessageFor(model => model.Priority)
                 @Html.ValidationMessageFor(model => model.Status)
@@ -98,7 +99,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PercentageCompleted, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PercentageCompleted)
+                @Html.DropDownList("PercentageCompleted", new List<SelectListItem>
+                    {
+                    new SelectListItem{Text = "Please Select %Age", Value="In Progress", Selected = true},
+                    new SelectListItem { Text = "15 %", Value = "15 %" },
+                    new SelectListItem { Text = "30 %", Value = "30 %" },
+                    new SelectListItem { Text = "45 %", Value = "45 %" },
+                    new SelectListItem{Text = "60 %", Value = "60 %"},
+                    new SelectListItem{Text = "75 %", Value = "75 %"},
+                    new SelectListItem{Text = "100 %", Value = "75 %"}
+                    })
                 @Html.ValidationMessageFor(model => model.PercentageCompleted)
             </div>
         </div>
@@ -106,7 +116,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CompletedDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CompletedDate)
+                @Html.TextBox("CompletedDate", string.Empty, new { @id = "txtdatepicker2", @style = "width:150px;" })
                 @Html.ValidationMessageFor(model => model.CompletedDate)
             </div>
         </div>

@@ -8,21 +8,16 @@
 
 
 
-
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 <script>
 
     $(function () {
-
         $("#txtdatepicker").datepicker();
         $("#txtdatepicker1").datepicker();
         $("#txtdatepicker2").datepicker();
-
     });
 
 </script>
@@ -50,7 +45,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MeetingItemDescription, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MeetingItemDescription)
+                @Html.TextAreaFor(model => model.MeetingItemDescription)
                 @Html.ValidationMessageFor(model => model.MeetingItemDescription)
             </div>
         </div>
@@ -76,10 +71,10 @@
             <div class="col-md-10">
                 @Html.DropDownList("Priority", new List<SelectListItem>
                     {
-                    new SelectListItem{Text = "Please Select Priority", Value="Select", Selected = true},
-                    new SelectListItem { Text = "Low", Value = "Low" },
-                    new SelectListItem { Text = "High", Value = "High" },
-                    new SelectListItem { Text = "Normal", Value = "Normal" }
+                    new SelectListItem { Text = "Please Select Priority", Value="Select", Selected = true},
+                      new SelectListItem { Text = "Low", Value = "Low" },
+                      new SelectListItem { Text = "Normal", Value = "Normal" },
+                      new SelectListItem { Text = "Urgent", Value = "Urgent" },
                 })
                 @Html.ValidationMessageFor(model => model.Priority)
 
@@ -103,13 +98,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PercentageCompleted, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-              @Html.DropDownList("PercentageCompleted", new List<SelectListItem>
+                @Html.DropDownList("PercentageCompleted", new List<SelectListItem>
                     {
                     new SelectListItem{Text = "Please Select %Age", Value="In Progress", Selected = true},
-                    new SelectListItem { Text = "In Progress", Value = "In Progress" },
-                    new SelectListItem { Text = "Resolved", Value = "Resolved" },
-                    new SelectListItem { Text = "Closed", Value = "Closed" }
-                })
+                    new SelectListItem { Text = "15 %", Value = "15 %" },
+                    new SelectListItem { Text = "30 %", Value = "30 %" },
+                    new SelectListItem { Text = "45 %", Value = "45 %" },
+                    new SelectListItem{Text = "60 %", Value = "60 %"},
+                    new SelectListItem{Text = "75 %", Value = "75 %"},
+                    new SelectListItem{Text = "100 %", Value = "75 %"}
+                    })
                 @Html.ValidationMessageFor(model => model.PercentageCompleted)
             </div>
         </div>

@@ -69,7 +69,9 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MeetingItemId }) |
             @Html.ActionLink("Details", "Details", new { id=item.MeetingItemId }) |
-            @Html.ActionLink("Current Status","CurrentStatus", new {id=item.MeetingItemId}) |
+                        @*
+        @Html.ActionLink("Current Status","CurrentStatus", new {id=item.MeetingItemId}) |
+            *@    
             @Html.ActionLink("Delete", "Delete", new { id=item.MeetingItemId })
         </td>
     </tr>

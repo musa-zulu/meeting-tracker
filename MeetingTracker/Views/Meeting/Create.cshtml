@@ -15,36 +15,12 @@
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
 <script>
-
     $(function () {
-
         $("#txtdatepicker").datepicker();
-
     });
 
 </script>
-@*
-        <h2>jQuery Datepicker</h2>
 
-        @using (Html.BeginForm("Index", "Home"))
-        {
-
-            <p>
-
-
-
-            @Html.TextBox("Datepicker", "", new { @id = "txtdatepicker", @style = "width:150px;" })
-
-            <br />
-
-            Your selected date :@ViewBag.dateValue
-
-            <br /><input type="submit" value="Submit" />
-
-        </p>
-
-    }
-*@
 
 @using (Html.BeginForm()) 
 {
@@ -138,3 +114,23 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+@*
+        <h2>jQuery Datepicker</h2>
+
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            <p>
+            @Html.TextBox("Datepicker", "", new { @id = "txtdatepicker", @style = "width:150px;" })
+
+            <br />
+
+            Your selected date :@ViewBag.dateValue
+
+            <br /><input type="submit" value="Submit" />
+
+        </p>
+
+    }
+*@
