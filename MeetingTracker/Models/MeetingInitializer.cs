@@ -66,7 +66,7 @@ namespace MeetingTracker.Models
                 {
                         // DueDate = DateTime.Now,
                     MeetingItemDescription = "Meeting Item Description one",
-                    Priority = "High",
+                    Priority = "Low",
                     PercentageCompleted = "15%",
                      DueDate = DateTime.Parse("2011-03-21"),
                      PersonId = 1,
@@ -81,8 +81,8 @@ namespace MeetingTracker.Models
                    // StartDate = DateTime.Now,
                    // DueDate = DateTime.Now,
                    
-                    Priority = "High",
-                    PercentageCompleted = "25%",
+                    Priority = "Low",
+                    PercentageCompleted = "45%%",
                  DueDate = DateTime.Parse("2012-03-2"),
                 PersonId = 2,
                  MeetingItemId =2, 
@@ -133,7 +133,7 @@ namespace MeetingTracker.Models
             {
                 new MeetingItemStatus
                 {
-                    CurrentStatus = "On Progress",
+                    CurrentStatus = "In Progress",
                     ActionRequired = "Fix Bug",
                     PersonId = 1,
                     MeetingId = 1,
@@ -145,7 +145,7 @@ namespace MeetingTracker.Models
 
                    new MeetingItemStatus
                 {
-                    CurrentStatus = "On Progress",
+                    CurrentStatus = "In Progress",
                     ActionRequired = "Fix Bug",
                     PersonId = 2,
                     MeetingId = 2,

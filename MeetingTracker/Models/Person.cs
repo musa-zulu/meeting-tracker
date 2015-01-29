@@ -20,7 +20,7 @@ namespace MeetingTracker.Models
       
         public string Email { get; set; }
         [Required(ErrorMessage = "Address field cannot be empty!.")]
-        [MaxLength(30, ErrorMessage = "Name cannot be more than 30 characters in length.")]
+        [MaxLength(30, ErrorMessage = "Address cannot be more than 30 characters in length.")]
         public string Address { get; set; }
         [RegularExpression(@"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})", ErrorMessage = "Please provide a valid phone number.")]
         [MaxLength(10, ErrorMessage = "Phone number cannot be more than 10 characters.")]

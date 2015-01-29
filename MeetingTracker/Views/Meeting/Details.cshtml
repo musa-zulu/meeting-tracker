@@ -60,23 +60,26 @@
 
         <p>&nbsp;</p>
         <h4 style="">Meeting Item Status</h4>
- 
+
         <dd>
             <table class="table">
                 <tr>
-             
+
                     <th>Action Required</th>
                     <th>Current Status</th>
                     <th>Responsible Person</th>
                 </tr>
+           
+                
                 @foreach (var item in Model.MeetingItemStatuses)
-                {
-                    <tr>
-                        <td> @Html.DisplayFor(modelItem => item.ActionRequired) </td>
-                        <td> @Html.DisplayFor(modelItem => item.CurrentStatus) </td>
-                        <td> @Html.DisplayFor(modelItem => item.Person.FirstName) </td>
-                    </tr>
-                }
+                     {
+                         <tr>
+                             <td> @Html.DisplayFor(modelItem => item.ActionRequired) </td>
+                             <td> @Html.DisplayFor(modelItem => item.CurrentStatus) </td>
+                             <td> @Html.DisplayFor(modelItem => item.Person.FirstName) </td>
+                         </tr>
+                     }
+                
             </table>
         </dd>
 
