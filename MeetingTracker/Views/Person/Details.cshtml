@@ -48,6 +48,33 @@
         <dd>
             @Html.DisplayFor(model => model.Phone)
         </dd>
+        
+        <p>&nbsp;</p>
+        <h3 style="">Meeting Items</h3>
+    
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Meeting Type</th>
+                    <th>Meeting Item Description</th>
+                    <th>Action Required</th>
+                    <th>Current Status</th>
+                    <th>Date Updated</th>
+                  
+                   
+                </tr>
+                @foreach (var item in Model.MeetingItemStatuses)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => item.Meeting.MeetingType.MeetingTypeDescription)</td>
+                        <td> @Html.DisplayFor(modelItem => item.MeetingItem.MeetingItemDescription) </td>
+                        <td> @Html.DisplayFor(modelItem => item.ActionRequired) </td>
+                        <td> @Html.DisplayFor(modelItem => item.CurrentStatus) </td>
+                        <td> @Html.DisplayFor(modelItem => item.DateUpdated) </td>
+                    </tr>
+                }
+            </table>
+        </dd>
 
     </dl>
 

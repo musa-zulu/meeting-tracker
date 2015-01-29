@@ -23,6 +23,8 @@ namespace MeetingTracker.Controllers
             return View(meetings.ToList());
         }
 
+
+
         // GET: /Meeting/Details/5
         public ActionResult Details(int? id)
         {

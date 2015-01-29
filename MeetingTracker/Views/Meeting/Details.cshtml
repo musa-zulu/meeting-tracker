@@ -8,7 +8,7 @@
 
 <div>
     <h4>Meeting</h4>
-	<hr />
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.MeetingType.MeetingTypeDescription)
@@ -58,7 +58,32 @@
             @Html.DisplayFor(model => model.Location)
         </dd>
 
+        <p>&nbsp;</p>
+        <h2 style="">Meeting Item Status</h2>
+        @*
+            <dt> @Html.DisplayNameFor(model => model.MeetingItemStatuses) </dt>
+        *@
+        <dd>
+            <table class="table">
+                <tr>
+             
+                    <th>Action Required</th>
+                    <th>Current Status</th>
+                    <th>Responsible Person</th>
+                </tr>
+                @foreach (var item in Model.MeetingItemStatuses)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => item.ActionRequired) </td>
+                        <td> @Html.DisplayFor(modelItem => item.CurrentStatus) </td>
+                        <td> @Html.DisplayFor(modelItem => item.Person.FirstName) </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
     </dl>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.MeetingId }) |
