@@ -74,6 +74,29 @@
         <dd>
             @Html.DisplayFor(model => model.CompletedDate)
         </dd>
+        
+
+        <p>&nbsp;</p>
+        <h2 style="">Meeting Item Status</h2>
+
+        <dd>
+            <table class="table">
+                <tr>
+
+                    <th>Meeting Date</th>
+                    <th>Current Status</th>
+                    <th>Responsible Person</th>
+                </tr>
+                @foreach (var item in Model.MeetingItemStatuses)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => item.Meeting.MeetingDate) </td>
+                        <td> @Html.DisplayFor(modelItem => item.CurrentStatus) </td>
+                        <td> @Html.DisplayFor(modelItem => item.Person.FirstName) </td>
+                    </tr>
+                }
+            </table>
+        </dd>
 
     </dl>
 </div>
