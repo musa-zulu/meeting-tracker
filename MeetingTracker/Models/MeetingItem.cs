@@ -16,10 +16,10 @@ namespace MeetingTracker.Models
         [Display(Name = "Item Description")]
         public string MeetingItemDescription { get; set; }
        
-       // [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [Display(Name = "Start Date")]
         public DateTime? StartDate { get; set; }
-    //    [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [Display(Name = "Due Date")]
         public DateTime? DueDate { get; set; } //this can be nullable
         public string Priority { get; set; }

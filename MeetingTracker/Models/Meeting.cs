@@ -15,7 +15,7 @@ namespace MeetingTracker.Models
         [Display(Name = "Meeting Description")]
         public string MeetingDescription { get; set; }
         // DisplayFormat(DataFormatString = "{0:d}",ApplyFormatInEditMode = true)]
-      //  [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Meeting Date")]
         public DateTime MeetingDate { get; set; }
         [Display(Name = "Start Time")]

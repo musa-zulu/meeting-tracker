@@ -3,92 +3,74 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
+    <h2 style="padding: 30px 0 0 300px">Meeting Tracker MVC Application</h2>
     <!--<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p>-->
-    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        <p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>-->
 </div>
 
+@*
+            @using (Ajax.BeginForm("Index",new AjaxOptions{ UpdateTargetId ="ID", OnSuccess = "onSuccess"}))  then change view to partialview insted of view
 
 
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "Person" }))
+        {
+            <div>
+                <fieldset>
+
+                    <legend>Account Information</legend>
+                    <div class="editor-label">
+                    </div>
+                    <div class="editor-label">                     </div>
+                    <div class="editor-label">
+                    </div>
+                    <div class="editor-label">
+
+                    </div>
+                    <p>
+                       @*<input type="submit" value="Submit" />
+                    </p>
+                </fieldset>
+            </div>    }
 
 
-
-
-
-
-    @*
-
-        @using (Ajax.BeginForm("Index",new AjaxOptions{ UpdateTargetId ="ID", OnSuccess = "onSuccess"}))  then change view to partialview insted of view
-
-
-    *@
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "Person" }))
-    {
-        <div>
-            <fieldset>
-
-                <legend>Account Information</legend>
-                <div class="editor-label">
-                    
-                </div>
-
-                <div class="editor-label">
-                  
-
-                </div>
-
-
-                <div class="editor-label">
-                   
-                </div>
-
-                <div class="editor-label">
-                   
-
-                </div>
-
-                <p>
-                   @*<input type="submit" value="Submit" />*@ 
-                </p>
-
-            </fieldset>
-
-
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
         </div>
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p> 
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
+*@
+
+
+<div>
+
+    <h2>About System</h2>
+    <p style="font-size:medium">this system is to be utilised to track management meetings and their minutes. the meetings are held regularly, and during each meeting tasks are assigned to various attendees. these tasks are then followed up on the following week and their status is updated if necessary.
+        this system must allow the user to easily capture and maintain information on actions that were agreed upon at each management meeting.
+        the system will be able to generate relevant reports and track certain matters that are brought up at a management meeting.</p>
+    <p style="font-size:medium">
+        The user will be able to add details for a new set of minutes for any particular meeting type e.g. f32 for the finance meeting.
+        based on the minutes the user will be able to update the status of any existing item. the user will be able to add new items arising from the meeting.
+        the user will be able to maintain all lookup tables such as lists of responsible staff, lists of meeting types, status lists.
+        the user will be able to edit relevant historical data if required.
+        the system will be designed such that it is user friendly and easy to use, all relevant entry validation will be included.
+<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
 </div>
