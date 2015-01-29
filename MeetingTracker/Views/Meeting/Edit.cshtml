@@ -7,6 +7,26 @@
 <h2>Edit</h2>
 
 
+
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+
+    $(function () {
+
+        $("#txtdatepicker").datepicker();
+
+    });
+
+</script>
+
+
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -20,7 +40,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MeetingDescription, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MeetingDescription)
+                @Html.EditorFor(model => model.MeetingDescription, new{@lcass="form-control"})
                 @Html.ValidationMessageFor(model => model.MeetingDescription)
             </div>
         </div>
@@ -28,7 +48,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MeetingDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MeetingDate)
+                @Html.TextBox("MeetingDate", string.Empty, new { @id = "txtdatepicker", @style = "width:150px;" })
                 @Html.ValidationMessageFor(model => model.MeetingDate)
             </div>
         </div>
@@ -36,7 +56,20 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartTime, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartTime)
+
+                @Html.DropDownList("StartTime", new List<SelectListItem>
+                {
+                    new SelectListItem{Text = "Please Select Start Time", Value="Select", Selected = true},
+              new SelectListItem { Text = "09:00 AM", Value = "09:00 AM" },
+                    new SelectListItem { Text = "10:00 AM", Value = "10:00 AM" },
+                    new SelectListItem { Text = "11:00 AM", Value = "11:00 AM" },
+                    new SelectListItem { Text = "12:00 PM", Value = "12:00 PM" },
+                    new SelectListItem { Text = "13:00 PM", Value = "13:00 PM" },
+                    new SelectListItem { Text = "14:00 PM", Value = "14:00 PM" },
+                    new SelectListItem { Text = "15:00 PM", Value = "15:00 PM" },
+                    new SelectListItem { Text = "16:00 PM", Value = "16:00 PM" }
+
+                })
                 @Html.ValidationMessageFor(model => model.StartTime)
             </div>
         </div>
@@ -44,10 +77,22 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EndTime, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EndTime)
+                @Html.DropDownList("EndTime", new List<SelectListItem>
+                {
+                     new SelectListItem{Text = "Please Select End Time", Value="Select", Selected = true},
+                    new SelectListItem { Text = "10:00 AM", Value = "10:00 AM" },
+                    new SelectListItem { Text = "11:00 AM", Value = "11:00 AM" },
+                    new SelectListItem { Text = "12:00 PM", Value = "12:00 PM" },
+                    new SelectListItem { Text = "13:00 PM", Value = "13:00 PM" },
+                    new SelectListItem { Text = "14:00 PM", Value = "14:00 PM" },
+                    new SelectListItem { Text = "15:00 PM", Value = "15:00 PM" },
+                    new SelectListItem { Text = "16:00 PM", Value = "16:00 PM" },
+                    new SelectListItem{Text = "17:00 PM", Value = "5pm"}
+                })
                 @Html.ValidationMessageFor(model => model.EndTime)
             </div>
         </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Location, new { @class = "control-label col-md-2" })

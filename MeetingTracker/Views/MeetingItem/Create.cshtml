@@ -7,17 +7,34 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+
+    $(function () {
+
+        $("#txtdatepicker").datepicker();
+        $("#txtdatepicker1").datepicker();
+
+    });
+
+
+
+</script>
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>MeetingItem</h4>
         <hr />
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PersonId, "PersonId", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PersonId, "Responsible Person", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("PersonId", String.Empty)
                 @Html.ValidationMessageFor(model => model.PersonId)
@@ -35,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDate)
+                @Html.TextBox("StartDate", string.Empty, new { @id = "txtdatepicker", @style = "width:150px;" })
                 @Html.ValidationMessageFor(model => model.StartDate)
             </div>
         </div>
@@ -43,7 +60,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DueDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DueDate)
+                @Html.TextBox("DueDate", string.Empty, new { @id = "txtdatepicker1", @style = "width:150px;" })
                 @Html.ValidationMessageFor(model => model.DueDate)
             </div>
         </div>
@@ -51,15 +68,29 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Priority, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Priority)
+                @Html.DropDownList("Priority", new List<SelectListItem>
+                    {
+                    new SelectListItem{Text = "Please Select Priority", Value="Select", Selected = true},
+                    new SelectListItem { Text = "Low", Value = "Low" },
+                    new SelectListItem { Text = "Normal", Value = "Normal" },
+                    new SelectListItem { Text = "High", Value = "High" }
+                    })
                 @Html.ValidationMessageFor(model => model.Priority)
+
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Status)
+                @Html.DropDownList("Status", new List<SelectListItem>
+                    {
+                    new SelectListItem{Text = "Please Select Status", Value="Select", Selected = true},
+                    new SelectListItem { Text = "In Progress", Value = "Progress" },
+                    new SelectListItem { Text = "Resolved", Value = "Resolved" },
+                    new SelectListItem { Text = "Closed", Value = "High" }
+                    })
+                @Html.ValidationMessageFor(model => model.Priority)
                 @Html.ValidationMessageFor(model => model.Status)
             </div>
         </div>
@@ -91,7 +122,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
