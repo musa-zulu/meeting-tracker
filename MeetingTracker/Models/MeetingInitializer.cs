@@ -6,7 +6,7 @@ using MeetingTracker.Context;
 namespace MeetingTracker.Models
 {
 
-    public class MeetingInitializer : DropCreateDatabaseAlways<MeetingContext>{
+    public class MeetingInitializer : DropCreateDatabaseIfModelChanges<MeetingContext>{
         protected override void Seed(MeetingContext context)
         {
             var meetingType = new List<MeetingType>()
