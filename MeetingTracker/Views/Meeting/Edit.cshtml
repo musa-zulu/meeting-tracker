@@ -30,7 +30,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Meeting</h4>
         <hr />
@@ -40,7 +40,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MeetingDescription, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MeetingDescription, new{@lcass="form-control"})
+                @Html.EditorFor(model => model.MeetingDescription, new { @lcass = "form-control" })
                 @Html.ValidationMessageFor(model => model.MeetingDescription)
             </div>
         </div>
@@ -87,7 +87,7 @@
                     new SelectListItem { Text = "14:00 PM", Value = "14:00 PM" },
                     new SelectListItem { Text = "15:00 PM", Value = "15:00 PM" },
                     new SelectListItem { Text = "16:00 PM", Value = "16:00 PM" },
-                    new SelectListItem{Text = "17:00 PM", Value = "5pm"}
+                    new SelectListItem{Text = "17:00 PM", Value = "17:00 PM"}
                 })
                 @Html.ValidationMessageFor(model => model.EndTime)
             </div>
