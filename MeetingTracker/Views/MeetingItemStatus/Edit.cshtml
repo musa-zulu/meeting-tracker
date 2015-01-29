@@ -1,4 +1,5 @@
-﻿@model MeetingTracker.Models.MeetingItemStatus
+﻿@using Microsoft.Ajax.Utilities
+@model MeetingTracker.Models.MeetingItemStatus
 
 @{
     ViewBag.Title = "Edit";
@@ -85,7 +86,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DateUpdated, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBox("DateUpdated", Model.DateUpdated, new { @id = "txtdatepicker", @style = "width:150px;" })
+                @Html.TextBox("DateUpdated", Model.DateUpdated.Value.ToShortDateString(),new { @id = "txtdatepicker", @style = "width:150px;" })
                 @Html.ValidationMessageFor(model => model.DateUpdated)
             </div>
         </div>

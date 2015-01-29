@@ -1,4 +1,5 @@
-﻿@model MeetingTracker.Models.MeetingItem
+﻿@using Microsoft.Ajax.Utilities
+@model MeetingTracker.Models.MeetingItem
 
 @{
     ViewBag.Title = "Edit";
@@ -53,7 +54,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBox("StartDate", Model.StartDate, new { @id = "txtdatepicker", @style = "width:150px;" })
+                @Html.TextBox("StartDate", Model.StartDate.Value.ToShortDateString(), new { @id = "txtdatepicker", @style = "width:150px;" })
                 @Html.ValidationMessageFor(model => model.StartDate)
             </div>
         </div>
@@ -61,7 +62,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DueDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBox("DueDate", Model.DueDate, new { @id = "txtdatepicker1", @style = "width:150px;" })
+                @Html.TextBox("DueDate", Model.DueDate.Value.ToShortDateString(), new { @id = "txtdatepicker1", @style = "width:150px;" })
                 @Html.ValidationMessageFor(model => model.DueDate)
             </div>
         </div>
