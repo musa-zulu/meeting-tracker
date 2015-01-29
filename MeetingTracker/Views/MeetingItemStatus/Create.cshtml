@@ -7,10 +7,23 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+
+    $(function () {
+        $("#txtdatepicker").datepicker();
+    });
+
+</script>
+
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>MeetingItemStatus</h4>
         <hr />
@@ -43,7 +56,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CurrentStatus, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CurrentStatus)
+                @Html.DropDownList("CurrentStatus", new List<SelectListItem>
+                    {
+                    new SelectListItem{Text = "Please Select Status", Value="In Progress", Selected = true},
+                    new SelectListItem { Text = "In Progress", Value = "In Progress" },
+                    new SelectListItem { Text = "Resolved", Value = "Resolved" },
+                    new SelectListItem { Text = "Closed", Value = "Closed" }
+                })
                 @Html.ValidationMessageFor(model => model.CurrentStatus)
             </div>
         </div>
@@ -51,7 +70,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ActionRequired, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ActionRequired)
+                @Html.DropDownList("ActionRequired", new List<SelectListItem>
+                    {
+                    new SelectListItem {Text = "Please Select Action", Value="Action", Selected = true},
+
+                    new SelectListItem { Text = "Fix Bugs", Value = "Fix Bugs" },
+                    new SelectListItem { Text = "Testing", Value = "Testing" },
+                     new SelectListItem { Text = "Send Invoice", Value = "Send Invoice" }
+                })
                 @Html.ValidationMessageFor(model => model.ActionRequired)
             </div>
         </div>
@@ -59,7 +85,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DateUpdated, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DateUpdated)
+                @Html.TextBox("DateUpdated", string.Empty, new { @id = "txtdatepicker", @style = "width:150px;" })
                 @Html.ValidationMessageFor(model => model.DateUpdated)
             </div>
         </div>
@@ -75,7 +101,9 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@*
+        @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+*@
