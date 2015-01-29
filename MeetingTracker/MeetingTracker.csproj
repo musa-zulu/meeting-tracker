@@ -164,6 +164,7 @@
     <Compile Include="Controllers\MeetingController.cs" />
     <Compile Include="Controllers\MeetingItemController.cs" />
     <Compile Include="Controllers\MeetingItemStatusController.cs" />
+    <Compile Include="Controllers\MeetingTypeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -396,6 +397,11 @@
     <Content Include="Views\Meeting\Details.cshtml" />
     <Content Include="Views\Meeting\Edit.cshtml" />
     <Content Include="Views\Meeting\Index.cshtml" />
+    <Content Include="Views\MeetingType\Create.cshtml" />
+    <Content Include="Views\MeetingType\Delete.cshtml" />
+    <Content Include="Views\MeetingType\Details.cshtml" />
+    <Content Include="Views\MeetingType\Edit.cshtml" />
+    <Content Include="Views\MeetingType\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

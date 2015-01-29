@@ -9,13 +9,13 @@ namespace MeetingTracker.Models
         public int MeetingId { get; set; }
         //[Required(ErrorMessage = "Please choose a value from Dropdown cannot be empty!.")]
         [Display(Name = "Meeting Type")]
-        public virtual  MeetingType MeetingType { get; set; }
+        public virtual MeetingType MeetingType { get; set; }
         [Required(ErrorMessage = "Name field cannot be empty!.")]
         [MaxLength(50, ErrorMessage = "Description cannot be more than 50 characters in length!.")]
         [Display(Name = "Meeting Description")]
         public string MeetingDescription { get; set; }
-        // DisplayFormat(DataFormatString = "{0:d}",ApplyFormatInEditMode = true)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+        //  [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Meeting Date")]
         public DateTime MeetingDate { get; set; }
         [Display(Name = "Start Time")]
@@ -30,7 +30,7 @@ namespace MeetingTracker.Models
         //public ICollection<Attendees> Attendees{get;set;}
         //  public ICollection<MeetingItem> MeetingItems { get; set; }
         // public virtual ICollection<Person> Persons { get; set; }
-      //  public virtual ICollection<Attendees> Attendeeses { get; set; }
+        //  public virtual ICollection<Attendees> Attendeeses { get; set; }
         public virtual ICollection<MeetingItemStatus> MeetingItemStatuses { get; set; }
 
     }

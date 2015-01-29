@@ -18,9 +18,12 @@ namespace MeetingTracker.Models
         public string CurrentStatus { get; set; }
         [Display(Name = "Action Required")]
         public string ActionRequired { get; set; }
-      //  [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [Display(Name = "Date Updated")]
         public DateTime? DateUpdated { get; set; }
+
+
+
         [Display(Name = "Responsible Person")]
         public virtual Person Person { get; set; }
         public virtual Meeting Meeting { get; set; }

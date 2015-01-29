@@ -26,11 +26,13 @@ namespace MeetingTracker.Models
         public string Status { get; set; }
         [Display(Name = "%Completed")]
         public string PercentageCompleted { get; set; }
+
+         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [Display(Name = "Completed Date")]
         public DateTime? CompletedDate { get; set; }  //this can be nullable
 
 
-        [Required(ErrorMessage = "Please select one item from Dropdown.")]
+        [Required(ErrorMessage = "Please select person from Dropdown.")]
         [Display(Name = "Assignee")]
         public virtual Person Person { get; set; }
 
